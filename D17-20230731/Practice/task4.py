@@ -5,7 +5,7 @@ def find_sum(num):
     for i in range(len(num)):
         for j in range(i+1,len(num)):
             if num[i]+num[j]==sum:
-                 pairs=pairs+str((num[i],num[j]))+","
+                 pairs=pairs+str((num[i],num[j]))
     return pairs
 final=find_sum(list)
 print(final)
