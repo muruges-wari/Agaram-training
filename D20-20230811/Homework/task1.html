@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>My form</title>
+        <style>
+            h3{
+                display: flex;
+                flex-direction: row;
+            }
+            body{
+                border: dotted;
+            }
+        h3:before,
+        h3:after{
+            content:"";
+            flex: 1 1;
+            border-bottom: 1px solid black;
+            margin: 10px;
+    }
+    </style>
+    </head>
+    <body>
+        <form action="file:///home/murugeswari/Karka/D20-20230811/Practice/new.html" method="post">
+            <h3>Register Here</h3>
+            <h1><center>Please Fill And Submit Form :</center></h1>
+            <br><center><label>Name:</label><input type="text" required name="Name" placeholder="Enter Your Name"/></center>
+            <br><center><label>Email:</label><input type="Email" required name="Email" placeholder="Enter Your Email"/></center>
+            <br><center><label>Age:</label><input type="number" required name="Age" placeholder="Enter Your Age"/></center>
+            <br><center><label>Date of Birth:</label><input type="date" required name="DOB"/></center>
+            <br><center><label>Phone number:</label><select name="code">
+                <option>Select your code</option>
+                <option value="91">91</option>
+                <option value="977">977</option>
+                <option value="94">94</option>
+                <input type="number" required name="ph number" placeholder="Enter Your Phone number"/></center>
+            <br><center><label>Select your Gender :</label><input type="radio" name="Male"/>Male <input type="radio" name="Female"/>Female <input type="radio" name="other"/>Other</center>
+            <br><center><label>Choose your skill level:</label><input type="checkbox" name="Beginner"/>Beginner <input type="checkbox" name="Intermediate"/>Intermediate <input type="checkbox" name="Advanced"/>Advanced
+            <br><br><center><label>Select your favourite color:</label><input type="color" name="color"/></center>     
+            <br><center><label>Father name:</label><input type="text" required name="f name" placeholder="Enter your father name"/></center>
+            <br><center><label>Choose your Language :</label><input type="checkbox" name="Tamil"/>Tamil<input type="checkbox" name="English"/>English<input type="checkbox" name="Malayalam"/>Malayalam</center>
+            <br><center><label>Hobbies:</label><input type="text" name="hobbies" placeholder="Enter your hobbies"/></center>
+            <br><center><label>Address:</label><textarea></textarea></center>
+            <br><center><input type="submit" value="Submit"/></center>
+        </form>
+    </body>
+</html>
