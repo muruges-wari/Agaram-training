@@ -1,0 +1,36 @@
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgb(34, 33, 33);
+}
+body{
+    text-align: center;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    background-color: rgb(248, 238, 92);
+}
+
+.submit{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 30px;
+}
+.skill{
+    line-height: 1.2em;
+    font-size: smaller;
+    text-align:justify;
+    padding-left: 600px;
+    
+}
+input{
+    padding: 8px;
+}
+.personal{
+    text-align: justify;
+    padding-left: 450px;
+    font-size: 12pt;
+}

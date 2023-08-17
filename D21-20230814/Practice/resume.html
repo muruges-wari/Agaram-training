@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>resume-builder</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <form action="" method="POST">
+            <h1>RESUME-BUILDER</h1>
+            <label><b>Name:</b></label><br />
+                <input type="text" name="name" /><br />
+            <label><b>Job Title:</b></label><br />
+                <input type="text" name="job title" /><br />
+            <label><b>Email:</b></label><br />
+                <input type="email" name="email" /><br />
+            <label><b>Objective:</b></label><br /><textarea name="Objective"></textarea><br /><br />
+            <label><b>Experience</b>:</label><br />
+        <div>
+                <input type="text" placeholder="Company Name 1" name="company1" />
+                <input type="text" placeholder="Role" name="role" />
+            <label>Years:</label>
+                <select name="years">
+                    <option value="0-1">0-1</option>
+                    <option value="1-3">1-3</option>
+                    <option value="3-5">3-5</option>
+                    <option value="above 5">Above 5</option>
+                </select>
+            <label>Job Description:</label><textarea></textarea><br />
+                <input type="text" placeholder="Company Name 2" name="comany2" />
+                <input type="text" placeholder="Role" name="role" />
+            <label>Years:</label>
+                <select name="years">
+                    <option value="0-1">0-1</option>
+                    <option value="1-3">1-3</option>
+                    <option value="3-5">3-5</option>
+                    <option value="above 5">Above 5</option>
+                </select>
+            <label>Job Description:</label><textarea name="job description"></textarea><br>
+        </div>
+            <label><b>Education:</b></label>
+        <div>
+                <input type="text" placeholder="Course" name="course1" />
+                <input type="text" placeholder="Institute" name="institute1" />
+                <input type="text" placeholder="Passout Year" name="passout year1" />
+                <input type="text" placeholder="Percentage" name="percentage1" />%
+                <br>
+                <input type="text" placeholder="course" name="course2" />
+                <input type="text" placeholder="Institute" name="institute2" />
+                <input type="text" placeholder="Passout Year" name="passout year2" />
+                <input type="text" placeholder="Percentage" name="percentage2" />%
+                <br>
+                <input type="text" placeholder="Course" name="course3" />
+                <input type="text" placeholder="Institute" name="institute3" />
+                <input type="text" placeholder="Passout Year" name="passout year3" />
+                <input type="text" placeholder="Percentage" name="percentage3" />%
+                <br>
+        </div>
+        <div>
+            <label><b>Projects:</b></label></br>
+                <input type="text" placeholder="Project Name" name="project1" />
+            <label>Project Description:</label><textarea name="project description1"></textarea></br>
+                <input type="text" placeholder="Project Name" name="project2" />
+            <label>Project Description:</label><textarea name="project description2"></textarea></br>
+        </div>
+            <label><b>Skills</b>:</label><br />
+        <div class="skill">
+                <input type="checkbox" name="java" />Java<br />
+                <input type="checkbox" name="Python" />Python<br />
+                <input type="checkbox" name="PHP" />PHP<br />
+                <input type="checkbox" name="javascript" />Java Script<br />
+                <input type="checkbox" name="react" />React<br />
+        </div>
+            <label><b>Area of Interest:</b></label><br />
+                <input type="text" name="area of interest" /><br />
+            <label><b>Hobbies:</b></label><br />
+                <input type="text" name="hobbies" /><br />
+            <label><b>Personal Details:</b></label><br />
+        <div class="personal">
+                <input type="text" name="fathername" placeholder="Father Name" />
+                <input type="number" name="age" placeholder=" Your Age" /><br />
+            <label><b>Gender:</b></label>
+                <input type="radio" name="Male" /><small>Male</small>
+                <input type="radio" name="female" /><small>Female</small>
+                <input type="radio" name="other" /><small>Other</small><br />
+            <label><b>Date of Birth:</b></label>
+                <input type="date" placeholder="Date of Birth" name="DOB" /><br />
+            <label><b>Marital status:</b></label>
+                <input type="radio" name="married" /><small>Married</small>
+                <input type="radio" name="unmarried" /><small>Unmarried</small></br>
+            <label><b>Languages Known:</b></label>
+                <input type="checkbox" name="Tamil" /><small>Tamil</small>
+                <input type="checkbox" name="english" /><small>English</small>
+                <input type="checkbox" name="malayalam" /><small>Malayalam</small>
+                <input type="checkbox" name="hindi" /><small>Hindi</small></br>
+            <label><b>Address:</b></label><textarea name="address"></textarea><br />
+        </div>
+            <label><b>Declaration:</b></label><br /><textarea name="declaration"></textarea><br />
+                <input class="submit" type="submit" value="SUBMIT" />
+        </form>
+    </body>
+</html>
