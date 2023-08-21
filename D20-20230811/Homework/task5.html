@@ -20,8 +20,8 @@
             table{
                 border: 0px solid darkgreen;
                 border-width: 2px;
-                border-collapse: separate;
-                border-spacing: 50px;
+                border-collapse: collapse;
+            
                 margin: 5px;
                 margin-right: 2px;
                 padding-left: 5px;
@@ -30,10 +30,7 @@
             img{
                 border: 3px solid black;
             }
-            tr{
-                bottom: 2px;
-                background-color: rgb(214, 216, 94);
-            }
+            
             .end{
                 line-height: 0;
                 text-align: center;
@@ -48,24 +45,26 @@
         <p>Apples are crisp and juicy fruits with a wide range of colors,including red,green and yellow.</p>
         <h3><bold>Bananas</bold></h3>
         <p>Bananas are rich in pottassium and provide a quick and natural source of energy.</p>
-        <table>
-            <tr>
-                <th>Fruit</th>
-                <th>Description</th>
-                <th>Image</th>
-            </tr>
-            <tr>
-                <td>Apples</td>
-                <td>Apples are crisp and juicy fruits with a wide range of colors,including red,green and yellow.</td>
-                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThJdgX_TEdw1mkw7trmud5OUYa2m7ksSURRQ&usqp=CAU" height="170"/></td>
-            </tr>
-            <tr>
-                <td>Bananas</td>
-                <td>Bananas are rich in pottassium and provide a quick and natural source of energy.</td>
-                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_hDpgT9oE5oz4fgifqv021SW_OFEZM7QCw&usqp=CAU" height="180"/></td>
-            </tr>
-        </table>
-        <hr>
-        <p class="end"><small>2023 fruit Information. All rights reserved.</small></p>
+        <center>
+            <table border="1">
+                <tr>
+                    <th>Fruit</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+                <tr>
+                    <td>Apples</td>
+                    <td>Apples are crisp and juicy fruits with a wide range of colors,including red,green and yellow.</td>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThJdgX_TEdw1mkw7trmud5OUYa2m7ksSURRQ&usqp=CAU" height="170"/></td>
+                </tr>
+                <tr>
+                    <td>Bananas</td>
+                    <td>Bananas are rich in pottassium and provide a quick and natural source of energy.</td>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_hDpgT9oE5oz4fgifqv021SW_OFEZM7QCw&usqp=CAU" height="180"/></td>
+                </tr>
+            </table>
+            <hr>
+            <p class="end"><small>&copy;2023 fruit Information. All rights reserved.</small></p>
+       </center>
     </body>
 </html>
