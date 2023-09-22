@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="total">
+        <h1>Celcius to Fahrenheit</h1>
+        <div>
+            <input type="text" id="input" placeholder="Enter Celcius"/><br/>
+            <button type="submit" onclick="convert()">Convert to Farenheit</button>
+        </div>
+        <div id="result"></div>
+    </div>
+        <script>
+            function convert(){
+            let celval = Number(document.getElementById("input").value)
+            let faval = (celval*1.8)+32
+            let result = document.getElementById('result')
+            result.innerHTML = faval.toFixed(2)
+            }
+        </script>
+    </body>
+</html>

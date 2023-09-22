@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="first.css"/>
+    </head>
+    <body>
+        <div id="first">
+            <button id="add1" onclick="logout()">LOGIN</button>
+            <button id="add2" onclick="registration()">REGISTER</button>
+        </div>
+
+        <div id="login">
+            <label>Email:</label>
+            <input type="email" id="email"/></br>
+            <label>Password:</label>
+            <input type="password" id="password"/></br>
+            <button id="add" onclick="loginCheck()">LOGIN</button>
+        </div>
+
+        <div id="home">
+            <p id="para">WELCOME </p>
+            <button id="log_out" onclick="logout()">LOG OUT</button>
+        </div>
+
+        <div id="register">
+            <label>Username:</label>
+            <input type="text" id="username"/></br>
+            <label>Email:</label>
+            <input type="email" id="useremail"/></br>
+            <label>Password:</label>
+            <input id="userpassword"/></br>
+            <button onclick="checkregister()">REGISTER</button>
+        </div>
+
+        <div id="registered_users">
+            <button id="reg" onclick="reg_users()">REGISTER_USERS</button>
+        </div>
+        
+        <div id="table">
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <div id="hide">
+            <p id="reg_para"></p>
+        </div>
+        
+        <script src="first.js" type="text/Javascript"></script>
+        <script>
+            loggedIn()
+        </script>
+    </body>
+</html>

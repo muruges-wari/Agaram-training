@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .container{
+                text-align: center;
+                display: grid;
+                grid-template-rows: 1fr 14fr 14fr 5fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 10px;
+                grid-template-areas: 
+                'nav nav nav nav'
+                'side main main main'
+                'side content1 content2 content3'
+                'side foot foot foot';
+            }
+            nav{
+                background-color: aqua;
+                grid-area: nav;
+            }
+            side{
+                background-color: brown;
+                grid-area: side;
+            }
+            main{
+                background-color: blue;
+                grid-area: main;
+            }
+            .content1{
+                background-color: orangered;
+                grid-area: content1;
+            }
+            .content2{
+                background-color: orangered;
+                grid-area: content2;
+            }
+            .content3{
+                background-color: orangered;
+                grid-area: content3;
+            }
+            footer{
+                background-color: blueviolet;
+                grid-area: foot;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav>Navbar</nav>
+            <side>Sidebar</side>
+            <main>Main</main>
+            <div class="content1">content1</div>
+            <div class="content2">content2</div>
+            <div class="content3">content3</div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>

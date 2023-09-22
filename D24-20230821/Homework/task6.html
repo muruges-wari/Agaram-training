@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                background-color: rgb(187, 105, 105);
+            }
+            .container{
+                display: grid;
+                text-align: center;
+                gap:20px;
+                padding: 20px;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 70px 220px 220px 50px;
+                grid-template-areas: 
+                'head head head head'
+                'aside arti arti arti'
+                'aside image1 image2 image3'
+                'foot foot foot foot';
+            }
+            header{
+                background-color: rgb(52, 172, 132);
+                grid-area: head;
+            }
+            aside{
+                background-color: rgb(6, 58, 41);
+                grid-area: aside;
+            }
+            article{
+                background-color: rgb(163, 63, 16);
+                grid-area: arti;
+                padding-top: 100px;
+                padding-bottom: 360px;
+            }
+            .image1{
+                background-color: rgb(23, 63, 50);
+                grid-area: image1;
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .image2{
+                background-color: rgb(16, 61, 46);
+                grid-area: image2;
+                display: inline-block;
+            }
+            .image3{
+                background-color: rgb(26, 85, 65);
+                grid-area: image3;
+                display: inline-block;
+            }
+            footer{
+                background-color: rgb(17, 197, 137);
+                grid-area: foot;
+            }
+            .img{
+                padding: 110px;
+                margin-right: 20px;
+                margin-top: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>Header</header>
+            <aside>Aside</aside>
+            <article>Article</br>
+                <div class="img image1">Image1</div>
+                <div class="img image2">Image2</div>
+                <div class="img image3">Image3</div>
+            </article>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>

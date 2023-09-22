@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            .container{
+                display: grid;
+                gap: 2px;
+                text-align: center;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 90px 220px 220px 70px;
+                grid-template-areas: 
+                'head head'
+                'main side'
+                'twin1 twin2'
+                'foot foot';
+            }
+            header{
+                grid-area: head;
+                background-color: rgb(45, 126, 202);
+            }
+            main{
+                grid-area: main;
+                background-color: rgb(21, 94, 31);
+                margin-left: 200px;
+                width: 85%;
+            }
+            .side{
+                grid-area: side;
+                background-color: rgb(172, 48, 177);
+                margin-right: 200px;
+                margin-left: 104px;
+            }
+            .twin1{
+                grid-area: twin1;
+                background-color: rgb(187, 102, 33);
+                margin-left: 200px;
+            }
+            .twin2{
+                grid-area: twin2;
+                background-color: rgb(187, 102, 33);
+                margin-right: 200px;
+            }
+            footer{
+                grid-area: foot;
+                background-color: rgb(23, 23, 71);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>Header</header>
+            <main>Main Content</main>
+            <side class="side">Sidebar</side>
+            <div class="twin1">Twin1</div>
+            <div class="twin2">Twin2</div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>

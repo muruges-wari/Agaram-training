@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                display: grid;
+                gap: 10px;
+                text-align: center;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 90px 220px 220px 70px;
+                grid-template-areas: 
+                'nav head head head'
+                'nav card1 card2 card3'
+                'nav card1 card2 card4'
+                'nav foot foot foot';
+            }
+            header{
+                grid-area: head;
+                background-color: orangered;
+                padding-top: 30px;
+            }
+            nav{
+                grid-area: nav;
+                background-color: orangered;
+                padding-top: 300px;
+            }
+            .card1{
+                grid-area: card1;
+                background-color: orangered;
+                padding-top: 200px;
+            }
+            .card2{
+                grid-area: card2;
+                background-color: orangered;
+                padding-top: 200px;
+            }
+            .card3{
+                grid-area: card3;
+                background-color: orangered;
+                padding-top: 90px;
+            }
+            .card4{
+                grid-area: card4;
+                background-color: orangered;
+                padding-top: 90px;
+            }
+            footer{
+                grid-area: foot;
+                background-color: orangered;
+                padding-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>Header</header>
+            <nav>Navigation</nav>
+            <div class="card1">Card1</div>
+            <div class="card2">Card2</div>
+            <div class="card3">Card3</div>
+            <div class="card4">Card4</div>
+            <footer>Footer</footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            .container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 100px 70px 170px 170px 70px;
+                text-align: center;
+                gap: 5px;
+                grid-template-areas: 
+                'head head head'
+                'nav nav nav'
+                'left box1 right'
+                'left box2 right'
+                'foot foot foot';
+            }
+            header{
+                grid-area: head;
+                border: 1px solid black;
+            }
+            nav{
+                grid-area: nav;
+                border: 1px solid black;
+            }
+            .left{
+                grid-area: left;
+                border: 1px solid black;
+            }
+            .box1{
+                grid-area: box1;
+                border: 1px solid black;
+            }
+            .box2{
+                grid-area: box2;
+                border: 1px solid black;
+            }
+            .right{
+                grid-area: right;
+                border: 1px solid black;
+            }
+            footer{
+                grid-area: foot;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>Header</header>
+            <nav>Navigation</nav>
+            <div class="left">left aside</div>
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="right">right aside</div>
+            <footer>footer</footer>
+        </div>
+    </body>
+</html>
