@@ -5,17 +5,18 @@
 body{
     line-height: 30px;
     text-align: center;
-    background-color: rgb(186, 233, 142);
+    background-color: rgb(231, 190, 235);
 }
 img{
     margin-left: 1044px;
     width: 15%;
     border: 5px solid black;
+    border-radius: 80%;
 }
 .first{
     margin-top: -201px;
     text-align: center;
-    background-color: rgb(5, 36, 19);
+    background-color: rgb(76, 15, 92);
     color: white;
     padding: 40px;
 }

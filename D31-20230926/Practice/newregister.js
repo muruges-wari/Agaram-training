@@ -1,3 +1,4 @@
+
 // note: if instant delete from window page- call required function at the end of the working function:
 // click login button- go to login page
 function loginCheck(){
@@ -11,14 +12,14 @@ function loginCheck(){
             
             localStorage.setItem("loggedin",true)
             localStorage.setItem("username",check[i].name)
-            window.location="home.html"
+            window.location="newhome.html"
         }
     }
 }
 // click logout button- shows login page
 function logout(){
     localStorage.removeItem("loggedin")
-    window.location="login.html"
+    window.location="newlogin.html"
 }
 
 // if refresh- username should be show
@@ -32,7 +33,7 @@ function loggedIn(){
 
 // click register button-go to registration page
 function registration(){
-    window.location="register.html"
+    window.location="newregister.html"
 }
 
 // add new user details in local storage 
@@ -114,7 +115,7 @@ function edit(b){
 function secure(){
     //  or if(localStorage.getItem("loggedin")!="true")
     if(!localStorage.getItem("loggedin")){
-        window.location="login.html"
+        window.location="newlogin.html"
     }
 }
 

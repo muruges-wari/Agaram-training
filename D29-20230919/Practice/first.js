@@ -1,6 +1,5 @@
+
 // note: if instant delete from window page- call required function at the end of the working function:
-
-
 // click login button- go to login page
 function loginCheck(){
     let login_email=document.getElementById("email").value;
