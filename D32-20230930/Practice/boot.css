@@ -1,0 +1,41 @@
+#nav{
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#search{
+    display: inline;
+    width: 65%;
+}
+#firstimage{
+    margin-left: 20px;
+}
+.navbar .navbar-brand{
+    margin-left: 20px;
+    color: rgb(164, 230, 59);
+    font-weight: 900;
+    font-size: 30px;
+}
+#navbarSupportedContent a{
+    color: white;
+}
+#navbarSupportedContent a:hover{
+    border-bottom: 2px solid rgb(164, 230, 59);
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+#home{
+    opacity: 0.9;
+    background: url("https://s1.1zoom.me/b7662/319/Little_cakes_Strawberry_Chocolate_578744_1920x1080.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section {
+    padding-top: 12%;
+    padding-right: 50%;
+
+}

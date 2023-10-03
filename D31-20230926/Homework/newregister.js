@@ -1,4 +1,4 @@
-// USING FIREBASE AUTHENTICATION
+// USING FIREBASE
 
 
 const firebaseConfig = {
@@ -19,7 +19,7 @@ var db = firebase.database()
 var dataRef = db.ref("registeredUsers");
 
 var auth = firebase.auth();
-// console.log(auth)
+console.log(auth)
 
 
 // note: if instant delete from window page- call required function at the end of the working function:
@@ -27,17 +27,22 @@ var auth = firebase.auth();
 function loginCheck() {
     let user_detail = document.getElementById("email").value
     let password = document.getElementById("password").value
-        auth.signInWithEmailAndPassword(user_detail, password)
-        .then((userCredential) => {
-            alert("login successfully")
-            window.location="newhome.html"
-            // console.log(userCredential)
+    dataRef.once('value')
+        .then(function (snapshot) {
+            let data = snapshot.val();
+            console.log(data);
+            if (data) {
+                for (i = 0; i < data.length; i++) {
+
+                    if ((data[i].email == user_detail) && (data[i].password == password)) {
+                        alert("login successfully")
+                        localStorage.setItem("loggedin", true)
+                        localStorage.setItem("logname", data[i].name)
+                        window.location = "newhome.html";
+                    }
+                }
+            }
         })
-        .catch((error) => {
-            console.log(error.code)
-            console.log(error.message)
-        });
-    
 }
 
 function logout() {
@@ -63,29 +68,38 @@ function registration() {
 
 
 function checkregister() {
-
-    console.log('call');
-    // console.log('register function called');
+    
     let reg_name = document.getElementById("username").value
     let reg_email = document.getElementById("useremail").value
     let reg_password = document.getElementById("userpassword").value
-    auth.createUserWithEmailAndPassword(reg_email, reg_password)
-        .then((userCredential) => {
-            alert("Registered sucessfully")
-            console.log(userCredential)
+
+    let reg_data = {
+        name: reg_name,
+        email: reg_email,
+        password: reg_password,
+    }
+
+    dataRef.once('value')
+        .then(function (snapshot) {
+            let data = snapshot.val();
+            console.log(data);
+            if (data) {
+                data.push(reg_data);
+                db.ref('registeredUsers').set(data);
+            }
+            else {
+                db.ref(`registeredUsers/${0}`).set(reg_data);
+            }
         })
-        .catch((error) => {
-            console.log(error.code)
-            console.log(error.message)
-        });
-
-
 }
+
 
 // add new user details in table(dynamic)
 function reg_users() {
+    // console.log('reg_user called');
     dataRef.once('value')
         .then(function (snapshot) {
+            // console.log('yes inside');
             let data = snapshot.val();
             let htmldata = "";
             for (var i = 0; i < data.length; i++) {
@@ -156,12 +170,12 @@ function edit(b) {
 
 // if logout homepage should be hide in browser(secure home page)
 
-// function secure() {
-//     //  or if(localStorage.getItem("loggedin")!="true")
-//     if (!localStorage.getItem("loggedin")) {
-//         window.location = "newlogin.html"
-//     }
-// }
+function secure() {
+    //  or if(localStorage.getItem("loggedin")!="true")
+    if (!localStorage.getItem("loggedin")) {
+        window.location = "newlogin.html"
+    }
+}
 
 
 

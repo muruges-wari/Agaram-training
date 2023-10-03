@@ -2,6 +2,7 @@
     text-align: center;
     line-height: 50px;
     background-color: rgb(248, 166, 166);
+    align-items: center;
 }
 input{
     padding: 8px;
@@ -10,6 +11,6 @@ button{
     background-color: black;
     color:white;
     padding: 5px;
-}
+} */
 
- */
+

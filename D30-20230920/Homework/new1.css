@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+.flex{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+    justify-content:space-evenly;
+}
+p{
+    border: 5px solid white;
+    width: 20%;
+    height: 80px;
+    text-align: center;
+    background-color: orangered;
+    border-radius: 10%;
+    font-size: larger;
+}
