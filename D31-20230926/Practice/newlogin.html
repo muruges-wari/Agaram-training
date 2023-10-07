@@ -9,11 +9,13 @@
     </head>
     <body class="bg-black m-5 text-center lh-lg text-light fs-6">
         <form method="">
-            <div id="login">
+            <div id="login" class="d-flex flex-column align-items-center">
+                <label>Name:</label>
+                <input class="border-3 border-danger" type="text" id="loginname"/></br>
                 <label>Email:</label>
-                <input class="border-3 border-danger" type="email" id="email"/></br></br>
+                <input class="border-3 border-danger" type="email" id="email"/></br>
                 <label>Password:</label>
-                <input class="border-3 border-danger" type="password" id="password"/></br></br>
+                <input class="border-3 border-danger" type="password" id="password"/></br>
                 <button class="btn btn-success" type="button" id="add" onclick="loginCheck()">LOGIN</button>
             </div>
         </form>

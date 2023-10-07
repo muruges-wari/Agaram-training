@@ -27,31 +27,66 @@ var auth = firebase.auth();
 function loginCheck() {
     let user_detail = document.getElementById("email").value
     let password = document.getElementById("password").value
-        auth.signInWithEmailAndPassword(user_detail, password)
+    let login_name = document.getElementById("loginname").value
+    auth.signInWithEmailAndPassword(user_detail, password)
         .then((userCredential) => {
             alert("login successfully")
-            window.location="newhome.html"
+
+            var user = auth.currentUser;
+            var userid = user.uid;
+            console.log(userid)
+            let details = {
+                username: login_name,
+                useremail: user_detail,
+                loggedin: true,
+            }
+            db.ref('registeredUsers/' + userid).set(details)
+
+            window.location = "newhome.html"
             // console.log(userCredential)
         })
         .catch((error) => {
             console.log(error.code)
             console.log(error.message)
         });
-    
+
 }
 
 function logout() {
-    localStorage.removeItem("loggedin")
-    window.location = "newlogin.html"
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var userid = user.uid;
+            db.ref(`registeredUsers/${userid}`).once('value')
+                .then(function (snapshot) {
+                    var data = snapshot.val();
+                    if (data.loggedin == true) {
+                        let log = {
+                            loggedin: false,
+                        }
+                        db.ref(`registeredUsers/` + userid).set(log)
+                        window.location = "newlogin.html"
+                    }
+                })
+        }
+    });
+
 }
 
 // if refresh- username should be show
 function loggedIn() {
-    if (localStorage.getItem("loggedin")) {
-        let login_name = localStorage.getItem("logname")
-        document.getElementById("para").innerHTML = `<span> WELCOME ${login_name}</span>`
-        reg_users()
-    }
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var userid = user.uid;
+            db.ref(`registeredUsers/${userid}`).once('value')
+                .then(function (snapshot) {
+                    var data = snapshot.val();
+                    if (data.loggedin == true) {
+                        document.getElementById("para").innerHTML = data.username
+                        reg_users()
+                    }
+                })
+        }
+    });
 }
 
 // click register button-go to registration page
@@ -84,21 +119,29 @@ function checkregister() {
 
 // add new user details in table(dynamic)
 function reg_users() {
-    dataRef.once('value')
-        .then(function (snapshot) {
-            let data = snapshot.val();
-            let htmldata = "";
-            for (var i = 0; i < data.length; i++) {
-                htmldata = htmldata + `<tr>
-                <td>${data[i].name}</td>
-                <td>${data[i].email}</td>
-                <td id="textname"><button id="regedit" type="button" onclick="edit('${data[i].name}')">&#9998</button></td>
-                <td> <button id="delete" type="button" onclick="regdel('${data[i].name}')">&#128465</button></td>
-            </tr>`
-            }
-            document.getElementById("tbody").innerHTML = htmldata
-        })
-}
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var userid = user.uid;
+            db.ref(`registeredUsers/${userid}`).once('value')
+                .then(function (snapshot) {
+                    let data = snapshot.val();
+                    console.log(data)
+                    let htmldata = "";
+                    htmldata = htmldata + `<tr>
+                    <td>${data.username}</td>
+                    <td>${data.useremail}</td>
+                    <td id="textname"><button id="regedit" type="button" onclick="edit('${data.username}')">&#9998</button></td>
+                    <td> <button id="delete" type="button" onclick="regdel('${data.username}')">&#128465</button></td>
+                    </tr>`
+                    document.getElementById("tbody").innerHTML = htmldata
+
+                })
+        }
+    }
+    )
+};
+
+
 
 // click delete icon -delete in table and local storage
 function regdel(a) {
@@ -156,12 +199,24 @@ function edit(b) {
 
 // if logout homepage should be hide in browser(secure home page)
 
-// function secure() {
-//     //  or if(localStorage.getItem("loggedin")!="true")
-//     if (!localStorage.getItem("loggedin")) {
-//         window.location = "newlogin.html"
-//     }
-// }
+function secure() {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            var userid = user.uid;
+            db.ref(`registeredUsers/${userid}`).once('value')
+                .then(function (snapshot) {
+                    var data = snapshot.val();
+                    if (data.loggedin == false) {
+                        window.location = "newfront.html"
+                    }
+                })
+        }
+    });
 
+
+}
+function logoutbutton() {
+    window.location = "newlogin.html"
+}
 
 
