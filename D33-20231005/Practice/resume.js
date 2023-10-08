@@ -12,7 +12,7 @@ function input(ele,p_key){
     }
     else{
         resume_details[ele.name]=ele.value
-        console.log(resume_details)
+        // console.log(resume_details)
 
     }
     display()
@@ -34,7 +34,7 @@ function handleMul(p_key,ele_id,para){
     display()
 }
 function addskill(p_key,para){
-    let data=[...resume_details[p_key]]
+    let data=resume_details[p_key]
     let htmldata=""
     for(let i=0;i<data.length;i++){
         htmldata=htmldata+`<span class="mt-2">
@@ -50,6 +50,7 @@ function display(){
     document.getElementById("display_data").innerHTML=JSON.stringify(resume_details,undefined,2)
 }
 function del(p_key,clo,para){
+    console.log(clo)
     let data=resume_details[p_key]
     let newdata=[]
     for(i=0;i<data.length;i++){
@@ -59,13 +60,13 @@ function del(p_key,clo,para){
 
     }
     resume_details[p_key]=newdata
-    console.log(newdata)
+    // console.log(newdata)
     addskill(p_key,para)
     display()
 }
 function handleMulArrData(ele){
     eachtmp[ele.name]=ele.value
-    console.log(eachtmp)
+    // console.log(eachtmp)
 }
 function handleMulArrObj(p_key){
     if(!resume_details[p_key]){
@@ -73,26 +74,33 @@ function handleMulArrObj(p_key){
     }
     resume_details[p_key].push(eachtmp)
     let each=Object.keys(eachtmp)
-    console.log(each)
+    // console.log(each)
     for(i=0;i<each.length;i++){
         console.log(each[i])
         document.getElementById(each[i]).value=""
     }
-    addobj(eachtmp)
+    addobj(resume_details[p_key])
     eachtmp={}
     display()
 }
-function addobj(eachtmp){
+function addobj(p_key){
     let data=""
-    console.log(eachtmp)
-    // for (const key in eachtmp){
-    //     console.log(`${key}:${eachtmp[key]}`)
-    //     data=data+`<tr>
-    //     <td></td>
-    //     </tr>`
-    // }
-    
-    
+    for(i=0;i<p_key.length;i++){
+        // console.log(p_key[i])
+        for (const key in p_key[i]){
+            console.log(`${key}:${p_key[i][key]}`)
+            data=data+`<tr>
+            <td>${key}</td>
+            <td>${p_key[i][key]}</td>
+            <td><button type="button" onclick="tabledel('${p_key[i][key]}')" >&#128465</button></td>
+            <tr>`
+            // console.log(data)
+            }
+    }
+    document.getElementById("table").innerHTML=data
+}
+function tabledel(){
+ 
 }
 
 

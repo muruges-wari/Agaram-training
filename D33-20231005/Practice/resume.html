@@ -38,6 +38,13 @@
                         value="">
                 </div>
             </div>
+            <div class="form-group row mt-1">
+                <label for="staticEmail" class="mt-1 col-sm-2 col-form-label">Date:</label>
+                <div class="col-sm-10">
+                    <input type="date" name="date" onkeyup="input(this)" class="form-control" id="staticEmail"
+                        value="">
+                </div>
+            </div>
             <h3 class="mt-3 bg-info text-light text-center">Objective:</h3>
             <div class="form-group row">
                 <div class="col-sm-11 ms-5">
@@ -47,60 +54,78 @@
             </div>
             <h3 class="mt-3 bg-info text-light text-center">EDUCATIONAL DETAILS:</h3>
             <div class="form-group row" id="education">
-                <div class="col-sm-2">
+                <div class="col-sm-2 ms-5" >
                     <input type="text" id="ins_level" name="ins_level" placeholder="level" class="form-control"
                         id="staticEmail" value="" onkeyup="handleMulArrData(this)">
-                    
+
                 </div>
                 <div class="col-sm-2">
                     <input type="text" id="ins_name" name="ins_name" placeholder="Ins Name" class="form-control"
                         id="staticEmail" value="" onkeyup="handleMulArrData(this)">
-                    
+
                 </div>
                 <div class="col-sm-2">
                     <input type="text" id="ins_year" name="ins_year" placeholder="Year" class="form-control"
                         id="staticEmail" value="" onkeyup="handleMulArrData(this)">
-                    
+
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" id="ins_percentage" name="ins_percentage" placeholder="Percentage" class="form-control"
-                        id="staticEmail" value="" onkeyup="handleMulArrData(this)">
-                    
+                    <input type="text" id="ins_percentage" name="ins_percentage" placeholder="Percentage"
+                        class="form-control" id="staticEmail" value="" onkeyup="handleMulArrData(this)">
+
                 </div>
                 <div class="col-sm-2">
-                    <button type="button" onclick="handleMulArrObj('education')" class="btn btn-success">Add</button>
+                    <button type="button" onclick="handleMulArrObj('educational')" class="btn btn-success">Add</button>
                 </div>
-                <span id="para1"></span>
+                <div class="d-flex flex-row mb-3 nxt">
+                    <table border="1" class="table-light" style="width: 200px;">
+                        <tbody id="table"></tbody>
+                    </table>
+                </div>
             </div>
             <h3 class="mt-3 bg-info text-light text-center">Skills:</h3>
             <div class="form-group row" id="skill">
                 <div class="col-sm-5">
-                    <input type="text" id="skill_name" class="form-control"
-                        id="staticEmail" value="">
-                    
+                    <input type="text" id="skill_name" class="form-control" id="staticEmail" value="">
+
                 </div>
                 <div class="col-sm-3">
-                    <button type="button" onclick="handleMul('skills','skill_name','para')" class="btn btn-success">Add</button>
+                    <button type="button" onclick="handleMul('skills','skill_name','para')"
+                        class="btn btn-success">Add</button>
                 </div>
-                <div >
+                <div>
                     <span id="para"></span>
+                </div>
+            </div>
+            <h3 class="mt-3 bg-info text-light text-center">Projects:</h3>
+            <div class="form-group row" id="skill">
+                <div class="col-sm-5">
+                    <input type="text" id="pro_name" class="form-control" id="staticEmail" value="">
+
+                </div>
+                <div class="col-sm-3">
+                    <button type="button" onclick="handleMul('projects','pro_name','para2')"
+                        class="btn btn-success">Add</button>
+                </div>
+                <div>
+                    <span id="para2"></span>
                 </div>
             </div>
             <h3 class="mt-3 bg-info text-light text-center">Languages:</h3>
             <div class="form-group row" id="skill">
                 <div class="col-sm-5">
-                    <input type="text" id="lan_name" class="form-control"
-                        id="staticEmail" value="">
-                    
+                    <input type="text" id="lan_name" class="form-control" id="staticEmail" value="">
+
                 </div>
                 <div class="col-sm-3">
-                    <button type="button" onclick="handleMul('languages','lan_name','para1')" class="btn btn-success">Add</button>
+                    <button type="button" onclick="handleMul('languages','lan_name','para1')"
+                        class="btn btn-success">Add</button>
                 </div>
-                <div >
+                <div>
                     <span id="para1"></span>
                 </div>
             </div>
-            
+
 
             <h3 class="mt-3 bg-info text-light text-center">Personal Details:</h3>
             <div class="form-group row">
@@ -114,6 +139,13 @@
                 <label for="staticEmail" class="mt-1 col-sm-2 col-form-label">Mother Name:</label>
                 <div class="col-sm-10">
                     <input type="text" name="mother_name" onkeyup="input(this,'personal_details')" class="form-control"
+                        id="staticEmail" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="mt-1 col-sm-2 col-form-label">Gender:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="gender" onkeyup="input(this,'personal_details')" class="form-control"
                         id="staticEmail" value="">
                 </div>
             </div>
@@ -132,10 +164,13 @@
                 </div>
             </div>
 
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-success">SUBMIT</button>
+            </div>
 
         </form>
         <div class="row">
-            <div class="alert alert-warning">
+            <div class="alert alert-warning mt-4">
                 <code><pre id="display_data"></pre></code>
             </div>
         </div>

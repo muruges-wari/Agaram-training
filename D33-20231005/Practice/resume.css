@@ -10,3 +10,6 @@ span{
 #skill{
     padding-left: 35%;
 }
+.nxt{
+    flex-wrap: wrap;
+}

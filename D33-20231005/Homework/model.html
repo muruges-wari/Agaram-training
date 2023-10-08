@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>resume builder</title>
+        <link rel="stylesheet" href="model.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Resume Builder</h1>
+            <form action="">
+                <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="name" onkeyup="input(this)" class="form-control" id="inputPassword" >
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Objective:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="objective" onkeyup="input(this)" class="form-control" id="inputPassword" >
+                    </div>
+                  </div>
+                  <h3>SKILLS:</h3>
+                  <div class="mb-3 row">
+                    <div class="col-sm-4">
+                      <input type="text" id="skill_name" class="form-control" id="inputPassword" >
+                    </div>
+
+                    <div class="mb-1 col-sm-2">
+                      <button type="button" class="btn btn-success" onclick="handleMulArr('skills','skill_name','para')">ADD</button>
+                    </div>
+                    <div class="mb-1 col-sm-2">
+                      <span id="para"></span>
+                    </div>
+                </div>
+                <h3>Educational Details:</h3>
+                  <div class="mb-3 row">
+                    <div class="col-sm-2">
+                      <input type="text" id="ins_level" name="ins_level" placeholder="level" onkeyup="handleMulObj(this)" class="form-control" >
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" id="ins_name" name="ins_name" placeholder="Ins name" onkeyup="handleMulObj(this)" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" id="ins_year" name="ins_year" placeholder="year"  onkeyup="handleMulObj(this)" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" id="ins_percentage" name="ins_percentage" placeholder="percentage" onkeyup="handleMulObj(this)" class="form-control">
+                    </div>
+                    <div class="col-sm-1">
+                      <button type="button" onclick="handleMulObjData('educational_details')" class="btn btn-success">Add</button>
+                    </div>
+                    <div>
+                      <table>
+                        <tbody id="distable"></tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                  <h3>Personal Details:</h3>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Father Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="father_name" onkeyup="input(this,'personal_details')" class="form-control" id="inputPassword" >
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Mother Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="mother_name" onkeyup="input(this,'personal_details')" class="form-control" id="inputPassword" >
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">DOB:</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="dob" onkeyup="input(this,'personal_details')" class="form-control" id="inputPassword" >
+                    </div>
+                  </div>
+
+            </form>
+            <div class="alert alert-warning">
+                <pre><code id="display_data"></code></pre>
+            </div>
+        </div>
+
+        <script src="model.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
