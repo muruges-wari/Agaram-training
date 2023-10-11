@@ -1,5 +1,6 @@
 let resume_details={};
 let eachtmp={};
+let username="Murugeswari";
 function input(ele,p_key){
     if (p_key){
         if(resume_details[p_key]){
@@ -25,6 +26,7 @@ function handleMul(p_key,ele_id,para){
     let element=document.getElementById(ele_id)
     if(element.value==""){
         alert("Enter First")
+        element.focus()
     }
     else{
         resume_details[p_key].push(element.value)  
@@ -68,7 +70,7 @@ function handleMulArrData(ele){
     eachtmp[ele.name]=ele.value
     // console.log(eachtmp)
 }
-function handleMulArrObj(p_key){
+function handleMulArrObj(p_key,table){
     if(!resume_details[p_key]){
         resume_details[p_key] =[]
     }
@@ -79,29 +81,220 @@ function handleMulArrObj(p_key){
         console.log(each[i])
         document.getElementById(each[i]).value=""
     }
-    addobj(resume_details[p_key])
+    addobj(resume_details[p_key],table)
     eachtmp={}
     display()
 }
-function addobj(p_key){
+function addobj(p_key,table){
     let data=""
     for(i=0;i<p_key.length;i++){
         // console.log(p_key[i])
         for (const key in p_key[i]){
-            console.log(`${key}:${p_key[i][key]}`)
+            // console.log(`${key}:${p_key[i][key]}`)
             data=data+`<tr>
             <td>${key}</td>
             <td>${p_key[i][key]}</td>
-            <td><button type="button" onclick="tabledel('${p_key[i][key]}')" >&#128465</button></td>
+            <td><button type="button" onclick="tabledel('${p_key}','${p_key[i][key]}','${key}','${table}')" >&#128465</button></td>
             <tr>`
             // console.log(data)
             }
     }
-    document.getElementById("table").innerHTML=data
+    document.getElementById(table).innerHTML=data
 }
-function tabledel(){
- 
+function tabledel(p_key,datakey,key,table){
+    console.log(p_key)
+    let data=[];
+    for(i=0;i<p_key.length;i++){
+        let keys=resume_details[p_key];
+        let one=keys[i][key];
+        // console.log(one)
+        if(one!=datakey){
+            data.push(keys[i])
+        }
+
+    }
+    resume_details[p_key]=data
+    display()
+    addobj(p_key,table)
 }
 
+function datasave(){
+    $.ajax(
+        {
+            type: "POST",
+            url: "http://agaram.academy/api/action.php",
+            data: {
+                request : "create_resume",
+                user : username,
+                resume:resume_details
+            },
+                success: function (response) {
+                    console.log('response', response)
+                    window.location="list.html"
+                
+            },
+                error: function (err) {
+                    console.log('error', err)
+            }
+        }
+    )
+   
+}
+function getdata(){
+    $.ajax(
+        {
+            type: "GET",
+            url: "http://agaram.academy/api/action.php",
+            data: {
+                request : "get_user_resume",
+                user : username,
+            },
+            success: function (response) {
+                let res = JSON.parse(response)
+                let dat=res.data;
+                let tabledata = ""
+                for(i=0;i<dat.length;i++){
+                    tabledata=tabledata+`<tr>
+                    <td>${dat[i].id}</td>
+                    <td>${dat[i].user}</td>
+                    <td><button type="button" class="btn btn-danger" onclick="deletedata('${dat[i].id}')">&times</button></td>
+                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single.html?id=${dat[i].id}">link</a></td>
+                    </tr>`
+                }
+                $('#t_body').html(tabledata)
+            },
+            error: function (err) {
+                console.log('error', err)
+            }
+        }
+    )
+}
+function deletedata(userid){
+    $.ajax(
+        {
+            type: "GET",
+            url: "http://agaram.academy/api/action.php",
+            data: {
+                request : "delete_user_resume",
+                user : username,
+                id:userid
+            },
+            success: function (response) {
+                let dat=JSON.parse(response)
+                console.log('response',dat)
+                
+            },
+            error: function (err) {
+                console.log('error', err)
+            }
+        }
+    
+    )
+    getdata()
+}
+function getiddata(id){
+    $.ajax(
+        {
+            type: "GET",
+            url: "http://agaram.academy/api/action.php",
+            data: {
+                request : "get_resume_by_id",
+                user : username,
+                id:id
+            },
+            success: function (response) {
+                // console.log(response)
+                let res=JSON.parse(response);
+                // console.log(res.data.data)
+                let dat=res.data;
+                let datas=JSON.parse(dat.data)
+                // console.log(datas)
+                $('#name').html(datas.name)
+                $('#email').html(datas.email)
+                $('#address').html(datas.address)
+                $('#contactNumber').html(datas.mob_no)
+                $('#date').html(datas.date)
+                $('#objective').html(datas.objective)
+                $('#declaration').html(datas.declaration)
+                $('#sign').html(datas.name)
+
+                let skills=datas.skills;
+                let ski=""
+                for(let i=0;i<skills.length;i++){
+                    ski=ski+`
+                    <li>${skills[i]}</li>
+                    `
+                    console.log(skills)
+                }
+                $('#skill').html(ski)
+                let languages=datas.languages;
+                let lan=""
+                for(let i=0;i<languages.length;i++){
+                    lan=lan+`
+                    <li>${languages[i]}</li>
+                    `
+                }
+                $('#language').html(lan)
+                let projects=datas.projects;
+                let pro=""
+                for(let i=0;i<projects.length;i++){
+                    pro=pro+`
+                    <li>${projects[i]}</li>
+                    `
+                }
+                $('#project').html(pro)
+                let educational=datas.educational;
+                let edu=""
+                for(let i=0;i<educational.length;i++){
+                    edu=edu+`<tr>
+                    <td>${educational[i].ins_level}</td>
+                    <td>${educational[i].ins_name}</td>
+                    <td>${educational[i].ins_year}</td>
+                    <td>${educational[i].ins_percentage}</td>
+                    </tr>`
+                    console.log(educational)
+                }
+                $('#education').html(edu)
+                let personal=datas.personal_details;
+                console.log(personal.father_name)
+                $('#fatherName').html(personal.father_name)
+                $('#motherName').html(personal.mother_name)
+                $('#gender').html(personal.gender)
+                $('#dob').html(personal.dob)
+
+            },
+            error: function (err) {
+                console.log('error', err)
+            }
+        }
+    )
+}
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+function generatePDF(){
+    const page=document.getElementById("total")
+    var opt={
+        margin:1,
+        filename:'Demopdf.pdf',
+        image:{type:'jpeg',quality:0.98,},
+        html2canvas:{scale:2},
+        jsPDF:{unit:'in',format:'letter',orientation:'portrait'}
+    };
+    html2pdf().set(opt).from(page).save();
+
+}
 
 
