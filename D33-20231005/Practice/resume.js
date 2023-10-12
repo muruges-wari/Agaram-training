@@ -70,52 +70,62 @@ function handleMulArrData(ele){
     eachtmp[ele.name]=ele.value
     // console.log(eachtmp)
 }
-function handleMulArrObj(p_key,table){
+function handleMulArrObj(p_key){
     if(!resume_details[p_key]){
         resume_details[p_key] =[]
     }
     resume_details[p_key].push(eachtmp)
+    addobj(resume_details[p_key],p_key)
     let each=Object.keys(eachtmp)
     // console.log(each)
     for(i=0;i<each.length;i++){
         console.log(each[i])
         document.getElementById(each[i]).value=""
     }
-    addobj(resume_details[p_key],table)
+  
     eachtmp={}
     display()
 }
-function addobj(p_key,table){
+function addobj(p_key,p_data){
+    console.log(p_key)
+    console.log(p_data)
+
     let data=""
     for(i=0;i<p_key.length;i++){
-        // console.log(p_key[i])
+        console.log(p_key)
+        let tddata=""
         for (const key in p_key[i]){
+            console.log
             // console.log(`${key}:${p_key[i][key]}`)
-            data=data+`<tr>
-            <td>${key}</td>
+            tddata=tddata+`
             <td>${p_key[i][key]}</td>
-            <td><button type="button" onclick="tabledel('${p_key}','${p_key[i][key]}','${key}','${table}')" >&#128465</button></td>
-            <tr>`
+            `
             // console.log(data)
             }
-    }
-    document.getElementById(table).innerHTML=data
-}
-function tabledel(p_key,datakey,key,table){
-    console.log(p_key)
-    let data=[];
-    for(i=0;i<p_key.length;i++){
-        let keys=resume_details[p_key];
-        let one=keys[i][key];
-        // console.log(one)
-        if(one!=datakey){
-            data.push(keys[i])
-        }
+            data=data+`<tr>`+tddata+`<td><button type="button" onclick="tabledel('${i}','${p_data}')">&times;</button></td>`+`</tr>`
+            console.log(p_key[i])
 
+        }
+    document.getElementById(p_data).innerHTML=data
+
+}
+function tabledel(todel,p_data){
+    console.log(todel)
+    console.log(p_data)
+    let data=resume_details[p_data];
+    console.log(data)
+    let dele=[]
+    for(let i=0;i<data.length;i++){
+        console.log(i)
+        if(i!=todel){
+            console.log(data[i])
+            dele.push(data[i])
+            // console.log(data)
+        }
     }
-    resume_details[p_key]=data
+    resume_details[p_data]=dele
+    addobj(resume_details[p_data],p_data)
     display()
-    addobj(p_key,table)
 }
 
 function datasave(){
