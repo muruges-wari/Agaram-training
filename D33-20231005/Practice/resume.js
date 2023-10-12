@@ -109,15 +109,15 @@ function addobj(p_key,p_data){
     document.getElementById(p_data).innerHTML=data
 
 }
-function tabledel(todel,p_data){
-    console.log(todel)
+function tabledel(delid,p_data){
+    console.log(delid)
     console.log(p_data)
     let data=resume_details[p_data];
     console.log(data)
     let dele=[]
     for(let i=0;i<data.length;i++){
         console.log(i)
-        if(i!=todel){
+        if(i!=delid){
             console.log(data[i])
             dele.push(data[i])
             // console.log(data)
