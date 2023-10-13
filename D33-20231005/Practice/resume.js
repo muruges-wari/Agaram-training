@@ -84,7 +84,6 @@ function handleMulArrObj(p_key){
         console.log(each[i])
         document.getElementById(each[i]).value=""
     }
-  
     eachtmp={}
     display()
 }
@@ -247,12 +246,15 @@ function getiddata(id){
                     `
                 }
                 $('#language').html(lan)
-                let projects=datas.projects;
+                
+                let projects=datas.project;
                 let pro=""
                 for(let i=0;i<projects.length;i++){
-                    pro=pro+`
-                    <li>${projects[i]}</li>
-                    `
+                    pro=pro+`<tr>
+                    <td>${projects[i].pro_title}</td>
+                    <td>${projects[i].pro_des}</td>
+                    <td>${projects[i].pro_year}</td>
+                    </tr>`
                 }
                 $('#project').html(pro)
                 let educational=datas.educational;

@@ -3,7 +3,7 @@
     padding: 0;
 }
 #first{
-    height:130%;
+    height:125%;
     width:20%;
     background-color: rgb(39, 2, 30);
     color: rgb(240, 248, 248);
@@ -20,7 +20,7 @@ h2{
 #personal{
     text-align: center;
     background-color: rgb(235, 185, 236);
-    height:130%;
+    height:125%;
     width:50%;
     margin-right: -116px;
     padding-top: 20px;
@@ -29,7 +29,6 @@ h2{
     right: 300;
 }
 #skills{
-    /* margin-top: 40px; */
     padding-top: 100px;
     text-align: center;
 }
@@ -47,4 +46,15 @@ h2{
 table.table-light{
     border:2px solid rgb(39, 2, 30);
     margin-top:20px;
-  }
+}
+#p_detail{
+    margin-top: 80px;
+}
+h4{
+    border-bottom: 3px solid white;
+
+}
+#la{
+    margin-top: 80px;
+
+}
