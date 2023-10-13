@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#first{
+    height:130%;
+    width:20%;
+    background-color: rgb(39, 2, 30);
+    color: rgb(240, 248, 248);
+    position: relative;
+    margin-left: 200px;
+}
+img{
+    margin:20px 0px 0px 50px;
+}
+h2{
+    color: rgb(249, 252, 252);
+    border-bottom: 3px solid white;
+}
+#personal{
+    text-align: center;
+    background-color: rgb(235, 185, 236);
+    height:130%;
+    width:50%;
+    margin-right: -116px;
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    right: 300;
+}
+#skills{
+    /* margin-top: 40px; */
+    padding-top: 100px;
+    text-align: center;
+}
+#tab{
+    width: 500px;
+    margin-left: 65px;
+}
+#last{
+    margin: 50px 0px 0px 480px;
+}
+#download{
+    text-align: center;
+    margin-top: 40px;
+}
+table.table-light{
+    border:2px solid rgb(39, 2, 30);
+    margin-top:20px;
+  }

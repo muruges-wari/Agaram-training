@@ -76,6 +76,8 @@ function handleMulArrObj(p_key){
     }
     resume_details[p_key].push(eachtmp)
     addobj(resume_details[p_key],p_key)
+    // console.log(resume_details[p_key])
+    // console.log(p_key)
     let each=Object.keys(eachtmp)
     // console.log(each)
     for(i=0;i<each.length;i++){
@@ -168,7 +170,7 @@ function getdata(){
                     <td>${dat[i].id}</td>
                     <td>${dat[i].user}</td>
                     <td><button type="button" class="btn btn-danger" onclick="deletedata('${dat[i].id}')">&times</button></td>
-                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single.html?id=${dat[i].id}">link</a></td>
+                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single1.html?id=${dat[i].id}">link</a></td>
                     </tr>`
                 }
                 $('#t_body').html(tabledata)
