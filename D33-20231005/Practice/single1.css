@@ -3,7 +3,7 @@
     padding: 0;
 }
 #first{
-    height:125%;
+    height:150%;
     width:20%;
     background-color: rgb(39, 2, 30);
     color: rgb(240, 248, 248);
@@ -20,7 +20,7 @@ h2{
 #personal{
     text-align: center;
     background-color: rgb(235, 185, 236);
-    height:125%;
+    height:150%;
     width:50%;
     margin-right: -116px;
     padding-top: 20px;
