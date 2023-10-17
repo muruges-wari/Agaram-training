@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+body{
+    margin-left: 50px;
+}
+#left {
+    width: 300px;
+    height: 140%;
+    background-color: black;
+    color: white;
+    position: relative;
+    margin-left: 170px;
+}
+
+img {
+    border-radius: 80%;
+    border: 5px solid white;
+    margin-top: 40px;
+}
+h3{
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+#ski{
+    padding-top: 80px;
+}
+#right{
+    height:140%;
+    width:50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(191, 204, 201);
+    margin-right: 170px;
+}
+#name1{
+    background-color: rgb(252, 239, 54);
+    margin-top: 50px;
+
+}
+#last{
+    margin: 50px 0px 0px 480px;
+}
