@@ -4,9 +4,11 @@
 }
 #total{
     height:150%;
-    width:70%;
+    /* width:70%; */
     background-color: rgb(200, 224, 224);
-    margin-left: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 #photo{
     margin-top: 3%;
@@ -22,11 +24,13 @@
     position: relative;
     margin-left: 5%;
     margin-top: 5%;
+    width:30%
 }
 #right{
     position: absolute;
-    top: 239;
-    right: 380;
+    top: 260;
+    right: 130;
+    width:50%;
 }
 h4{
     border: 3px solid rgb(0, 0, 0);
