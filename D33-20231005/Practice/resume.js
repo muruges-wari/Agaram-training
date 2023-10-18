@@ -169,7 +169,10 @@ function getdata(){
                     <td>${dat[i].id}</td>
                     <td>${dat[i].user}</td>
                     <td><button type="button" class="btn btn-danger" onclick="deletedata('${dat[i].id}')">&times</button></td>
+                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single1.html?id=${dat[i].id}">link</a></td>
                     <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single2.html?id=${dat[i].id}">link</a></td>
+                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single.html?id=${dat[i].id}">link</a></td>
+                    <td><a href="file:///home/murugeswari/AGARAM/D33-20231005/Practice/single3.html?id=${dat[i].id}">link</a></td>
                     </tr>`
                 }
                 $('#t_body').html(tabledata)
@@ -233,7 +236,7 @@ function getiddata(id){
                 let ski=""
                 for(let i=0;i<skills.length;i++){
                     ski=ski+`
-                    <li>${skills[i]}</li>
+                    <p>${skills[i]}</p>
                     `
                     console.log(skills)
                 }
@@ -242,7 +245,7 @@ function getiddata(id){
                 let lan=""
                 for(let i=0;i<languages.length;i++){
                     lan=lan+`
-                    <li>${languages[i]}</li>
+                    <p>${languages[i]}</p>
                     `
                 }
                 $('#language').html(lan)
