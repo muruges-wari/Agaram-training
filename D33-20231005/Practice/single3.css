@@ -28,9 +28,10 @@
 }
 #right{
     position: absolute;
-    top: 260;
+    top: 255;
     right: 130;
     width:50%;
+    margin-right: 5%;
 }
 h4{
     border: 3px solid rgb(0, 0, 0);

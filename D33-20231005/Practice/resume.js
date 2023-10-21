@@ -14,7 +14,6 @@ function input(ele,p_key){
     else{
         resume_details[ele.name]=ele.value
         // console.log(resume_details)
-
     }
     display()
     
@@ -28,6 +27,7 @@ function handleMul(p_key,ele_id,para){
         alert("Enter First")
         element.focus()
     }
+    
     else{
         resume_details[p_key].push(element.value)  
     }
