@@ -1,9 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import Todo from './todos/todo';
-import User from './todos/list'
-import Head from './todos/head'
+import User from './todos/list';
+import Head from './todos/head';
+import GoogleMaps from './googlemap';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +16,7 @@ function App() {
     log:false,
     email:"gayu@gmail.com"
   })
+  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -31,8 +33,7 @@ function App() {
   ]);
   return (
     <div>
-          <RouterProvider router={router} />
-          
+          <GoogleMaps/>
     </div>
   );
 }
